@@ -2,6 +2,6 @@
 
 Usage:
 ```
-./pr_cleanup --help
+./pr_cleanup.py --help
 ```
 
