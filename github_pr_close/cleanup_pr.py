@@ -30,14 +30,14 @@ def main(repo_name: str, date: str) -> None:
             pr_to_close.append(pr)
             click.echo(f'{pr.updated_at} - {pr.title} - {pr.state}')
 
-    r = click.prompt('Apply[Y/n]')
+    r = click.prompt('Apply[y/N]')
 
-    if r != 'Y':
+    if r.lower() != 'y':
         click.echo('User abort')
         return
 
     for pr in pr_to_close:
-        pr.edit(status='closed')
+        pr.edit(state='closed')
 
 
 if __name__ == '__main__':
